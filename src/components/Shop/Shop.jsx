@@ -15,12 +15,38 @@ const Shop = () => {
     }, [])
 
 
-    useEffect(()=>{
+    useEffect(() => {
+        // console.log('products',products);
         const storedCart = getShoppingCart();
-        console.log(storedCart);
-    },[])
+        // console.log(storedCart);
 
-    const handleAddToCart = (product) =>{
+        const savedCart = [];
+
+        // step 1 : get id
+        for (const id in storedCart) {
+            //console.log(id);
+            // step2: get the product by using id
+            const addedProduct = products.find(product => product.id === id)
+            //console.log('added product',addedProduct);
+            if (addedProduct) {
+                // step 3: get quantity of product
+                const quantity = storedCart[id];
+                //console.log('quantity',quantity);
+                addedProduct.quantity = quantity;
+
+                // step 4:  add the added product to the saved cart
+                savedCart.push(addedProduct);
+               
+            }
+            //console.log('added product',addedProduct);
+
+            
+        }
+        // step 5:  set the cart
+        setCart(savedCart);
+    }, [products])
+
+    const handleAddToCart = (product) => {
         // cart.push(product); not possible , immutable
         const newCart = [...cart, product];
         setCart(newCart);
