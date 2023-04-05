@@ -5,4 +5,16 @@
     top:0;
 
 }
+.btn-clear-cart{
+    width: 90%;
+    margin: 10px auto;
+    background: #FF3030;
+    border-radius: 4px;
+    color: white;
+    height: 56px;
+    font-size: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
