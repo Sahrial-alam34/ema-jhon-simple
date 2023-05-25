@@ -38,14 +38,14 @@ const Shop = () => {
 
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/products')
+    //     fetch('https://ema-jhon-server-sahrial-alam34.vercel.app/products')
     //         .then(res => res.json())
     //         .then(data => setProducts(data))
     // }, [])
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPage}`);
+            const response = await fetch(`https://ema-jhon-server-sahrial-alam34.vercel.app/products?page=${currentPage}&limit=${itemsPerPage}`);
             const data = await response.json();
             setProducts(data);
         }
@@ -59,7 +59,7 @@ const Shop = () => {
         // console.log(storedCart);
         const ids = Object.keys(storedCart);
 
-        fetch(`http://localhost:5000/productsByIds`, {
+        fetch(`https://ema-jhon-server-sahrial-alam34.vercel.app/productsByIds`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

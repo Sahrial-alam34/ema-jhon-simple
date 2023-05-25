@@ -7,8 +7,8 @@ const cartProductsLoader = async() =>{
     const storedCart = getShoppingCart();
     console.log(storedCart);
     const ids = Object.keys(storedCart);
-    //const loadedProducts = await fetch(`http://localhost:5000/products?page=0&limit=1000`);
-    const loadedProducts = await fetch(`http://localhost:5000/productsByIds`,{
+    //const loadedProducts = await fetch(`https://ema-jhon-server-sahrial-alam34.vercel.app/products?page=0&limit=1000`);
+    const loadedProducts = await fetch(`https://ema-jhon-server-sahrial-alam34.vercel.app/productsByIds`,{
         method: 'POST',
         headers: {
             'content-type': 'application/json'
